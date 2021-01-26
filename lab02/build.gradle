@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+    id 'application'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation('org.apache.commons:commons-csv:1.8')
+}
+
+application {
+    mainClassName = 'SimpleTest'
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
